@@ -19,7 +19,7 @@ const initModels = () => {
     SchoolAdmin.hasMany(Classes, {foreingKey: 'schoolAdminId'});
     Classes.belongsTo(SchoolAdmin, {foreingKey: 'schoolAdminId'});
 
-    SchoolAdmin.hasMany(Customers, {foreingKey: 'schoolAdminId'});
+    SchoolAdmin.hasMany(Customers, {foreingKey:   'schoolAdminId'});
     Customers.belongsTo(SchoolAdmin, {foreingKey: 'schoolAdminId'});
 
     SchoolAdmin.hasMany(Products, {foreingKey: 'schoolAdminId'});

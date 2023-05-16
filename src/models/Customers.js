@@ -15,7 +15,7 @@ id: {
   },
   email: {
     type:DataTypes.STRING,
-    allowNull:false
+    allowNull:false,
   },
   phone: {
     type:DataTypes.INTEGER,
@@ -23,7 +23,6 @@ id: {
   },
   location: {
     type:DataTypes.TEXT,
-    allowNull:false
   },
   schoolAdminId: {
     type:DataTypes.INTEGER,

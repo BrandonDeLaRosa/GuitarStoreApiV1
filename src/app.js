@@ -4,6 +4,8 @@ const morgan = require ('morgan');
 const db = require('./utils/database');
 const initModels = require('./models/initModels');
 const schoolAdminRoutes = require('./routes/schoolAdmin.route');
+const customerRoutes = require('./routes/customers.routes');
+const classesRoutes = require('./routes/classes.routes');
 
 
 initModels();
@@ -11,7 +13,7 @@ const app = express();
 
 app.use(cors());
 app.use(morgan('dev'));
-// app.use(express.json());
+app.use(express.json());
 
 
 db.authenticate()
@@ -34,7 +36,9 @@ db.sync()
 
 const PORT =8000;
 
-// app.use(schoolAdminRoutes);
+app.use(schoolAdminRoutes);
+app.use(customerRoutes);
+app.use(classesRoutes);
 
 app.get('/', (req,res) => {
     res.send('Welcome to my API')
